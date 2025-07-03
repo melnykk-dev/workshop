@@ -52,7 +52,7 @@ h1 {
   border-color: #ffc107aa;
 }
 
-/* Path page layout */
+/* Path task styling */
 .task-box {
   background: #1a1a1a;
   border-radius: 12px;
@@ -75,6 +75,7 @@ h1 {
   background: #2a2a2a;
   color: #fff;
   resize: vertical;
+  font-family: monospace;
 }
 
 button.run-btn {
