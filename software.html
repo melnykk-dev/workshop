@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Software Developer Task</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🧠 Software Developer</h1>
+    <p class="intro">Fix the function to return the sum of two numbers:</p>
+
+    <div class="task-box">
+      <h2>Example Task (JavaScript)</h2>
+      <textarea id="code">
+// Your Task:
+function add(a, b) {
+  return; // ???
+}
+console.log(add(2, 3));
+      </textarea>
+      <button class="run-btn" onclick="runCode()">Run Code</button>
+      <div class="output" id="output"></div>
+    </div>
+  </div>
+
+  <script>
+    function runCode() {
+      const code = document.getElementById('code').value;
+      const output = document.getElementById('output');
+      try {
+        const oldLog = console.log;
+        let result = '';
+        console.log = (...args) => { result += args.join(' ') + '\\n'; };
+        new Function(code)();
+        console.log = oldLog;
+        output.textContent = result || '(No output)';
+      } catch (e) {
+        output.textContent = 'Error: ' + e.message;
+      }
+    }
+  </script>
+</body>
+</html>
